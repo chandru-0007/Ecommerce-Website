@@ -1,0 +1,10 @@
+# MongoDB files
+data/
+*.lock
+
+# Node
+node_modules/
+dist/
+
+# Env
+.env

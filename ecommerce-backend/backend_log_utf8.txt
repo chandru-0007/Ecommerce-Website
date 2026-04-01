@@ -1,0 +1,150 @@
+﻿.\maven\apache-maven-3.9.6
+\bin\mvn : WARNING: A 
+restricted method in 
+java.lang.System has been 
+called
+At line:1 char:1
++ .\maven\apache-maven-3.9
+.6\bin\mvn 
+spring-boot:run > 
+backend_log.txt  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (W  
+  ARNING: A rest...has    
+ been called:String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+WARNING: 
+java.lang.System::load 
+has been called by org.fus
+esource.jansi.internal.Jan
+siLoader in an unnamed 
+module (file:/D:/ipmini/ec
+ommerce-backend/maven/apac
+he-maven-3.9.6/lib/jansi-2
+.4.0.jar)
+WARNING: Use --enable-nati
+ve-access=ALL-UNNAMED to 
+avoid a warning for 
+callers in this module
+WARNING: Restricted 
+methods will be blocked 
+in a future release 
+unless native access is 
+enabled
+
+WARNING: A terminally 
+deprecated method in 
+sun.misc.Unsafe has been 
+called
+WARNING: sun.misc.Unsafe::
+objectFieldOffset has 
+been called by com.google.
+common.util.concurrent.Abs
+tractFuture$UnsafeAtomicHe
+lper (file:/D:/ipmini/ecom
+merce-backend/maven/apache
+-maven-3.9.6/lib/guava-32.
+0.1-jre.jar)
+WARNING: Please consider 
+reporting this to the 
+maintainers of class com.g
+oogle.common.util.concurre
+nt.AbstractFuture$UnsafeAt
+omicHelper
+WARNING: sun.misc.Unsafe::
+objectFieldOffset will be 
+removed in a future 
+release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.ecommerce:ecommerce-backend >-------------------
+[INFO] Building ecommerce-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.0:run (default-cli) > test-compile @ ecommerce-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ecommerce-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ ecommerce-backend ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ ecommerce-backend ---
+[INFO] skip non existing resourceDirectory D:\ipmini\ecommerce-backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ ecommerce-backend ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.0:run (default-cli) < test-compile @ ecommerce-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.0:run (default-cli) @ ecommerce-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-04-01T22:51:23.680+05:30  INFO 19296 --- [  restartedMain] com.ecommerce.EcommerceApplication       : Starting EcommerceApplication using Java 24.0.1 with PID 19296 (D:\ipmini\ecommerce-backend\target\classes started by HP in D:\ipmini\ecommerce-backend)
+2026-04-01T22:51:23.681+05:30  INFO 19296 --- [  restartedMain] com.ecommerce.EcommerceApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-04-01T22:51:23.729+05:30  INFO 19296 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-01T22:51:23.730+05:30  INFO 19296 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-01T22:51:24.313+05:30  INFO 19296 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-04-01T22:51:24.384+05:30  INFO 19296 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 4 MongoDB repository interfaces.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/C:/Users/HP/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-04-01T22:51:24.816+05:30  INFO 19296 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-04-01T22:51:24.825+05:30  INFO 19296 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-01T22:51:24.825+05:30  INFO 19296 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-04-01T22:51:24.861+05:30  INFO 19296 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-01T22:51:24.862+05:30  INFO 19296 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1131 ms
+2026-04-01T22:51:25.018+05:30  INFO 19296 --- [  restartedMain] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.11.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/24.0.1+9-30"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@1a3df31a, com.mongodb.Jep395RecordCodecProvider@1aabe349, com.mongodb.KotlinCodecProvider@150ec82e]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2026-04-01T22:51:25.060+05:30  INFO 19296 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=27, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=26486600}
+2026-04-01T22:51:25.137+05:30  WARN 19296 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-04-01T22:51:25.393+05:30  WARN 19296 --- [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7c906828-8e74-4f7e-8733-d9598b76ee65
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-01T22:51:25.469+05:30  INFO 19296 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5ee43eab, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24e072e9, org.springframework.security.web.context.SecurityContextHolderFilter@115e14f9, org.springframework.security.web.header.HeaderWriterFilter@72a210fc, org.springframework.web.filter.CorsFilter@2564263c, org.springframework.security.web.authentication.logout.LogoutFilter@655dc368, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76435ac8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a10c1d0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27f53fbf, org.springframework.security.web.session.SessionManagementFilter@69044487, org.springframework.security.web.access.ExceptionTranslationFilter@6cee8044, org.springframework.security.web.access.intercept.AuthorizationFilter@66f391b7]
+2026-04-01T22:51:25.718+05:30  WARN 19296 --- [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-04-01T22:51:25.733+05:30  INFO 19296 --- [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-01T22:51:25.748+05:30 ERROR 19296 --- [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.036 s
+[INFO] Finished at: 2026-04-01T22:51:25+05:30
+[INFO] ------------------------------------------------------------------------

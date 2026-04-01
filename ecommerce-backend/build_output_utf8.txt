@@ -1,0 +1,707 @@
+﻿.\maven\apache-maven-3.
+9.6\bin\mvn.cmd : 
+WARNING: A restricted 
+method in 
+java.lang.System has 
+been called
+At line:1 char:1
++ .\maven\apache-maven-
+3.9.6\bin\mvn.cmd 
+clean compile > 
+build_output.t ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : 
+NotSpecified: (WAR    
+NING: A rest...has bee 
+   n called:String) 
+[], R    emoteException
+    + 
+FullyQualifiedErrorI   
+ d : NativeCommandError
+ 
+WARNING: 
+java.lang.System::load 
+has been called by org.
+fusesource.jansi.intern
+al.JansiLoader in an 
+unnamed module (file:/D
+:/ipmini/ecommerce-back
+end/maven/apache-maven-
+3.9.6/lib/jansi-2.4.0.j
+ar)
+WARNING: Use --enable-n
+ative-access=ALL-UNNAME
+D to avoid a warning 
+for callers in this 
+module
+WARNING: Restricted 
+methods will be 
+blocked in a future 
+release unless native 
+access is enabled
+
+WARNING: A terminally 
+deprecated method in 
+sun.misc.Unsafe has 
+been called
+WARNING: sun.misc.Unsaf
+e::objectFieldOffset 
+has been called by com.
+google.common.util.conc
+urrent.AbstractFuture$U
+nsafeAtomicHelper (file
+:/D:/ipmini/ecommerce-b
+ackend/maven/apache-mav
+en-3.9.6/lib/guava-32.0
+.1-jre.jar)
+WARNING: Please 
+consider reporting 
+this to the 
+maintainers of class co
+m.google.common.util.co
+ncurrent.AbstractFuture
+$UnsafeAtomicHelper
+WARNING: sun.misc.Unsaf
+e::objectFieldOffset 
+will be removed in a 
+future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.ecommerce:ecommerce-backend >-------------------
+[INFO] Building ecommerce-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ ecommerce-backend ---
+[INFO] Deleting D:\ipmini\ecommerce-backend\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ecommerce-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ ecommerce-backend ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 24 source files with javac [debug release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[43,65] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[53,13] cannot find symbol
+  symbol:   method setPassword(<nulltype>)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[61,32] cannot find symbol
+  symbol:   method setEmail(java.lang.String)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[62,32] cannot find symbol
+  symbol:   method setPhoneNumber(java.lang.String)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[64,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[65,13] cannot find symbol
+  symbol:   method setPassword(<nulltype>)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[73,51] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[76,13] cannot find symbol
+  symbol:   method setPassword(java.lang.String)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[77,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[85,16] cannot find symbol
+  symbol:   method setAddressId(java.lang.String)
+  location: variable address of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[87,17] cannot find symbol
+  symbol:   method getAddresses()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[88,20] cannot find symbol
+  symbol:   method setDefault(boolean)
+  location: variable address of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[89,45] cannot find symbol
+  symbol:   method getAddressId()
+  location: variable address of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[92,13] cannot find symbol
+  symbol:   method getAddresses()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[93,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[95,13] cannot find symbol
+  symbol:   method setPassword(<nulltype>)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[103,33] cannot find symbol
+  symbol:   method getAddresses()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[104,34] cannot find symbol
+  symbol:   method getAddresses()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[106,18] cannot find symbol
+  symbol:   method getAddressId()
+  location: variable a of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[107,24] cannot find symbol
+  symbol:   method setAddressId(java.lang.String)
+  location: variable updated of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[109,28] cannot find symbol
+  symbol:   method isDefault()
+  location: variable updated of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[110,25] cannot find symbol
+  symbol:   method getAddresses()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[111,25] cannot find symbol
+  symbol:   method setDefaultAddressId(java.lang.String)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[114,21] cannot find symbol
+  symbol:   method getAddresses()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[115,21] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[117,21] cannot find symbol
+  symbol:   method setPassword(<nulltype>)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[129,31] cannot find symbol
+  symbol:   method getAddresses()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[134,34] cannot find symbol
+  symbol:   method getDefaultAddressId()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[134,66] cannot find symbol
+  symbol:   method getAddresses()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[135,38] cannot find symbol
+  symbol:   method getAddresses()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[136,18] cannot find symbol
+  symbol:   method setDefault(boolean)
+  location: variable first of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[137,43] cannot find symbol
+  symbol:   method getAddressId()
+  location: variable first of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[140,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[141,13] cannot find symbol
+  symbol:   method setPassword(<nulltype>)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[151,35] cannot find symbol
+  symbol:   method getAddresses()
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[152,18] cannot find symbol
+  symbol:   method getAddressId()
+  location: variable a of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[153,18] cannot find symbol
+  symbol:   method setDefault(boolean)
+  location: variable a of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[156,18] cannot find symbol
+  symbol:   method setDefault(boolean)
+  location: variable a of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[162,13] cannot find symbol
+  symbol:   method setDefaultAddressId(java.lang.String)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[163,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[165,13] cannot find symbol
+  symbol:   method setPassword(<nulltype>)
+  location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[185,10] cannot find symbol
+  symbol:   method setUsername(java.lang.String)
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[186,10] cannot find symbol
+  symbol:   method setEmail(java.lang.String)
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[187,10] cannot find symbol
+  symbol:   method setPassword(java.lang.String)
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[188,10] cannot find symbol
+  symbol:   method setPhoneNumber(java.lang.String)
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[189,10] cannot find symbol
+  symbol:   method setRole(com.ecommerce.model.User.Role)
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[190,10] cannot find symbol
+  symbol:   method setCreatedAt(java.time.LocalDateTime)
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[191,10] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[197,18] cannot find symbol
+  symbol:   method getId()
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[198,18] cannot find symbol
+  symbol:   method getUsername()
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[199,18] cannot find symbol
+  symbol:   method getEmail()
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[200,18] cannot find symbol
+  symbol:   method getPhoneNumber()
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[201,18] cannot find symbol
+  symbol:   method getRole()
+  location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/model/Cart.java:[29,42] cannot find symbol
+  symbol:   method getPrice()
+  location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/model/Cart.java:[29,60] cannot find symbol
+  symbol:   method getQuantity()
+  location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[46,20] cannot find symbol
+  symbol:   method getStock()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[51,14] cannot find symbol
+  symbol:   method setUserId(java.lang.String)
+  location: variable c of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[52,14] cannot find symbol
+  symbol:   method setItems(java.util.ArrayList<java.lang.Object>)
+  location: variable c of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[57,48] cannot find symbol
+  symbol:   method getItems()
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[62,40] cannot find symbol
+  symbol:   method getQuantity()
+  location: class com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[63,33] cannot find symbol
+  symbol:   method getStock()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[64,85] cannot find symbol
+  symbol:   method getStock()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[65,27] cannot find symbol
+  symbol:   method setQuantity(int)
+  location: class com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[67,48] cannot find symbol
+  symbol:   method getStock()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[68,85] cannot find symbol
+  symbol:   method getStock()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[71,38] cannot find symbol
+  symbol:   method getId()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[72,40] cannot find symbol
+  symbol:   method getName()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[73,34] cannot find symbol
+  symbol:   method getPrice()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[74,17] cannot find symbol
+  symbol:   method setQuantity(int)
+  location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[75,37] cannot find symbol
+  symbol:   method getImageUrl()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[76,17] cannot find symbol
+  symbol:   method getItems()
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[79,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[96,35] cannot find symbol
+  symbol:   method getItems()
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[101,35] cannot find symbol
+  symbol:   method getStock()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[102,85] cannot find symbol
+  symbol:   method getStock()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[104,38] cannot find symbol
+  symbol:   method getItems()
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[108,17] cannot find symbol
+  symbol:   method setQuantity(int)
+  location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[111,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[123,31] cannot find symbol
+  symbol:   method getItems()
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[126,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[35,17] cannot find symbol
+  symbol:   method getItems()
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[35,44] cannot find symbol
+  symbol:   method getItems()
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[41,39] cannot find symbol
+  symbol:   method getItems()
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[42,62] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[45,24] cannot find symbol
+  symbol:   method getStock()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[45,42] cannot find symbol
+  symbol:   method getQuantity()
+  location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[46,79] cannot find symbol
+  symbol:   method getName()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[49,32] cannot find symbol
+  symbol:   method getPrice()
+  location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[49,50] cannot find symbol
+  symbol:   method getQuantity()
+  location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[53,39] cannot find symbol
+  symbol:   method getItems()
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[54,62] cannot find symbol
+  symbol:   method getProductId()
+  location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[55,37] cannot find symbol
+  symbol:   method getStock()
+  location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[55,55] cannot find symbol
+  symbol:   method getQuantity()
+  location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[61,14] cannot find symbol
+  symbol:   method setUserId(java.lang.String)
+  location: variable order of type com.ecommerce.model.Order
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[62,28] cannot find symbol
+  symbol:   method getItems()
+  location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[63,14] cannot find symbol
+  symbol:   method setTotalAmount(double)
+  location: variable order of type com.ecommerce.model.Order
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[64,14] cannot find symbol
+  symbol:   method setStatus(com.ecommerce.model.Order.OrderStatus)
+  location: variable order of type com.ecommerce.model.Order
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[67,14] cannot find symbol
+  symbol:   method setPaymentMethod(java.lang.String)
+  location: variable order of type com.ecommerce.model.Order
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[69,14] cannot find symbol
+  symbol:   method setPlacedAt(java.util.Date)
+  location: variable order of type com.ecommerce.model.Order
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[70,14] cannot find symbol
+  symbol:   method setUpdatedAt(java.util.Date)
+  location: variable order of type com.ecommerce.model.Order
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.097 s
+[INFO] Finished at: 2026-03-31T22:13:28+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project ecommerce-backend: Compilation failure: Compilation failure: 
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[43,65] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[53,13] cannot find symbol
+[ERROR]   symbol:   method setPassword(<nulltype>)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[61,32] cannot find symbol
+[ERROR]   symbol:   method setEmail(java.lang.String)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[62,32] cannot find symbol
+[ERROR]   symbol:   method setPhoneNumber(java.lang.String)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[64,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[65,13] cannot find symbol
+[ERROR]   symbol:   method setPassword(<nulltype>)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[73,51] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[76,13] cannot find symbol
+[ERROR]   symbol:   method setPassword(java.lang.String)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[77,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[85,16] cannot find symbol
+[ERROR]   symbol:   method setAddressId(java.lang.String)
+[ERROR]   location: variable address of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[87,17] cannot find symbol
+[ERROR]   symbol:   method getAddresses()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[88,20] cannot find symbol
+[ERROR]   symbol:   method setDefault(boolean)
+[ERROR]   location: variable address of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[89,45] cannot find symbol
+[ERROR]   symbol:   method getAddressId()
+[ERROR]   location: variable address of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[92,13] cannot find symbol
+[ERROR]   symbol:   method getAddresses()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[93,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[95,13] cannot find symbol
+[ERROR]   symbol:   method setPassword(<nulltype>)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[103,33] cannot find symbol
+[ERROR]   symbol:   method getAddresses()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[104,34] cannot find symbol
+[ERROR]   symbol:   method getAddresses()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[106,18] cannot find symbol
+[ERROR]   symbol:   method getAddressId()
+[ERROR]   location: variable a of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[107,24] cannot find symbol
+[ERROR]   symbol:   method setAddressId(java.lang.String)
+[ERROR]   location: variable updated of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[109,28] cannot find symbol
+[ERROR]   symbol:   method isDefault()
+[ERROR]   location: variable updated of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[110,25] cannot find symbol
+[ERROR]   symbol:   method getAddresses()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[111,25] cannot find symbol
+[ERROR]   symbol:   method setDefaultAddressId(java.lang.String)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[114,21] cannot find symbol
+[ERROR]   symbol:   method getAddresses()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[115,21] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[117,21] cannot find symbol
+[ERROR]   symbol:   method setPassword(<nulltype>)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[129,31] cannot find symbol
+[ERROR]   symbol:   method getAddresses()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[134,34] cannot find symbol
+[ERROR]   symbol:   method getDefaultAddressId()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[134,66] cannot find symbol
+[ERROR]   symbol:   method getAddresses()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[135,38] cannot find symbol
+[ERROR]   symbol:   method getAddresses()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[136,18] cannot find symbol
+[ERROR]   symbol:   method setDefault(boolean)
+[ERROR]   location: variable first of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[137,43] cannot find symbol
+[ERROR]   symbol:   method getAddressId()
+[ERROR]   location: variable first of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[140,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[141,13] cannot find symbol
+[ERROR]   symbol:   method setPassword(<nulltype>)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[151,35] cannot find symbol
+[ERROR]   symbol:   method getAddresses()
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[152,18] cannot find symbol
+[ERROR]   symbol:   method getAddressId()
+[ERROR]   location: variable a of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[153,18] cannot find symbol
+[ERROR]   symbol:   method setDefault(boolean)
+[ERROR]   location: variable a of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[156,18] cannot find symbol
+[ERROR]   symbol:   method setDefault(boolean)
+[ERROR]   location: variable a of type com.ecommerce.model.User.Address
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[162,13] cannot find symbol
+[ERROR]   symbol:   method setDefaultAddressId(java.lang.String)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[163,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[165,13] cannot find symbol
+[ERROR]   symbol:   method setPassword(<nulltype>)
+[ERROR]   location: variable user of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[185,10] cannot find symbol
+[ERROR]   symbol:   method setUsername(java.lang.String)
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[186,10] cannot find symbol
+[ERROR]   symbol:   method setEmail(java.lang.String)
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[187,10] cannot find symbol
+[ERROR]   symbol:   method setPassword(java.lang.String)
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[188,10] cannot find symbol
+[ERROR]   symbol:   method setPhoneNumber(java.lang.String)
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[189,10] cannot find symbol
+[ERROR]   symbol:   method setRole(com.ecommerce.model.User.Role)
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[190,10] cannot find symbol
+[ERROR]   symbol:   method setCreatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[191,10] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[197,18] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[198,18] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[199,18] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[200,18] cannot find symbol
+[ERROR]   symbol:   method getPhoneNumber()
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/UserService.java:[201,18] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable u of type com.ecommerce.model.User
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/model/Cart.java:[29,42] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/model/Cart.java:[29,60] cannot find symbol
+[ERROR]   symbol:   method getQuantity()
+[ERROR]   location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[46,20] cannot find symbol
+[ERROR]   symbol:   method getStock()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[51,14] cannot find symbol
+[ERROR]   symbol:   method setUserId(java.lang.String)
+[ERROR]   location: variable c of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[52,14] cannot find symbol
+[ERROR]   symbol:   method setItems(java.util.ArrayList<java.lang.Object>)
+[ERROR]   location: variable c of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[57,48] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[62,40] cannot find symbol
+[ERROR]   symbol:   method getQuantity()
+[ERROR]   location: class com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[63,33] cannot find symbol
+[ERROR]   symbol:   method getStock()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[64,85] cannot find symbol
+[ERROR]   symbol:   method getStock()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[65,27] cannot find symbol
+[ERROR]   symbol:   method setQuantity(int)
+[ERROR]   location: class com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[67,48] cannot find symbol
+[ERROR]   symbol:   method getStock()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[68,85] cannot find symbol
+[ERROR]   symbol:   method getStock()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[71,38] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[72,40] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[73,34] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[74,17] cannot find symbol
+[ERROR]   symbol:   method setQuantity(int)
+[ERROR]   location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[75,37] cannot find symbol
+[ERROR]   symbol:   method getImageUrl()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[76,17] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[79,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[96,35] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[101,35] cannot find symbol
+[ERROR]   symbol:   method getStock()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[102,85] cannot find symbol
+[ERROR]   symbol:   method getStock()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[104,38] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[108,17] cannot find symbol
+[ERROR]   symbol:   method setQuantity(int)
+[ERROR]   location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[111,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[123,31] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/CartService.java:[126,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[35,17] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[35,44] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[41,39] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[42,62] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[45,24] cannot find symbol
+[ERROR]   symbol:   method getStock()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[45,42] cannot find symbol
+[ERROR]   symbol:   method getQuantity()
+[ERROR]   location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[46,79] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[49,32] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[49,50] cannot find symbol
+[ERROR]   symbol:   method getQuantity()
+[ERROR]   location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[53,39] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[54,62] cannot find symbol
+[ERROR]   symbol:   method getProductId()
+[ERROR]   location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[55,37] cannot find symbol
+[ERROR]   symbol:   method getStock()
+[ERROR]   location: variable product of type com.ecommerce.model.Product
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[55,55] cannot find symbol
+[ERROR]   symbol:   method getQuantity()
+[ERROR]   location: variable item of type com.ecommerce.model.Cart.CartItem
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[61,14] cannot find symbol
+[ERROR]   symbol:   method setUserId(java.lang.String)
+[ERROR]   location: variable order of type com.ecommerce.model.Order
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[62,28] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable cart of type com.ecommerce.model.Cart
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[63,14] cannot find symbol
+[ERROR]   symbol:   method setTotalAmount(double)
+[ERROR]   location: variable order of type com.ecommerce.model.Order
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[64,14] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.ecommerce.model.Order.OrderStatus)
+[ERROR]   location: variable order of type com.ecommerce.model.Order
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[67,14] cannot find symbol
+[ERROR]   symbol:   method setPaymentMethod(java.lang.String)
+[ERROR]   location: variable order of type com.ecommerce.model.Order
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[69,14] cannot find symbol
+[ERROR]   symbol:   method setPlacedAt(java.util.Date)
+[ERROR]   location: variable order of type com.ecommerce.model.Order
+[ERROR] /D:/ipmini/ecommerce-backend/src/main/java/com/ecommerce/service/OrderService.java:[70,14] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.util.Date)
+[ERROR]   location: variable order of type com.ecommerce.model.Order
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
