@@ -11,6 +11,7 @@ import Profile from './pages/Profile';
 import About from './pages/About';
 import AdminProducts from './pages/AdminProducts';
 import AdminOrders from './pages/AdminOrders';
+import Settings from './pages/Settings';
 import { useAuth } from './context/AuthContext';
 
 const PrivateRoute = ({ children, adminOnly = false }) => {
@@ -37,6 +38,11 @@ const AppRouter = () => {
         <Route path="/profile" element={
           <PrivateRoute>
             <Layout><Profile /></Layout>
+          </PrivateRoute>
+        } />
+        <Route path="/settings" element={
+          <PrivateRoute>
+            <Layout><Settings /></Layout>
           </PrivateRoute>
         } />
         <Route path="/admin/products" element={

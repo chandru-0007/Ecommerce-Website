@@ -32,7 +32,15 @@ const Cart = () => {
       clearCart();
     } catch (err) {
       console.error('Order Error:', err);
-      alert('Failed to place order. Please try again.');
+      const errorMessage = err.response?.data?.message || 'Failed to place order. Please try again.';
+      
+      if (errorMessage.toLowerCase().includes('address')) {
+        if (window.confirm(`${errorMessage}\n\nWould you like to go to your profile to add an address?`)) {
+          navigate('/profile');
+        }
+      } else {
+        alert(errorMessage);
+      }
     } finally {
       setIsPlacing(false);
     }

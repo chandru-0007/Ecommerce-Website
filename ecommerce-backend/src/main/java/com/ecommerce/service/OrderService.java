@@ -26,21 +26,35 @@ public class OrderService {
     // ── Place Order ─────────────────────────────
     public Order placeOrder(String userId, List<Cart.CartItem> items, double clientTotalPrice) {
 
-        if (!userRepository.existsById(userId))
-            throw new RuntimeException("User not found");
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found: " + userId));
 
         if (items == null || items.isEmpty())
-            throw new RuntimeException("Cart is empty");
+            throw new RuntimeException("Your cart is empty. Please add items to order.");
+
+        // Address Validation
+        User.Address defaultAddress = user.getAddresses().stream()
+                .filter(a -> a.getAddressId().equals(user.getDefaultAddressId()))
+                .findFirst()
+                .orElse(null);
+
+        if (defaultAddress == null && !user.getAddresses().isEmpty()) {
+            defaultAddress = user.getAddresses().get(0); // Fallback to first address
+        }
+
+        if (defaultAddress == null) {
+            throw new RuntimeException("No delivery address found. Please add a default address in your profile settings.");
+        }
 
         double totalAmount = 0;
 
         // Check stock and populate prices/details
         for (Cart.CartItem item : items) {
             Product product = productRepository.findById(item.getProductId())
-                    .orElseThrow(() -> new RuntimeException("Product not found"));
+                    .orElseThrow(() -> new RuntimeException("Product not found: " + item.getProductId()));
 
             if (product.getStock() < item.getQuantity()) {
-                throw new RuntimeException("Insufficient stock for " + product.getName());
+                throw new RuntimeException("Insufficient stock for '" + product.getName() + "'. Available: " + product.getStock());
             }
 
             // Hydrate product details
@@ -64,6 +78,7 @@ public class OrderService {
         order.setItems(items);
         order.setTotalAmount(totalAmount);
         order.setStatus(Order.OrderStatus.PLACED);
+        order.setDeliveryAddress(defaultAddress); // ✅ SET ADDRESS
 
         // ✅ FIXED
         order.setPaymentMethod("COD");
@@ -71,6 +86,7 @@ public class OrderService {
         order.setPlacedAt(new Date());
         order.setUpdatedAt(new Date());
 
+        System.out.println("Order successfully placed for user: " + userId + " | Total: " + totalAmount);
         return orderRepository.save(order);
     }
 

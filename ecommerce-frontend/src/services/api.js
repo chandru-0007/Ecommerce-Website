@@ -71,4 +71,14 @@ export const adminAPI = {
   deleteProduct: (id) => api.delete(`/products/${id}`),
 };
 
+export const userAPI = {
+  getProfile: () => api.get(`/users/${getUserId()}/profile`),
+  updateProfile: (data) => api.put(`/users/${getUserId()}/profile`, data),
+  changePassword: (data) => api.put(`/users/${getUserId()}/password`, data),
+  addAddress: (address) => api.post(`/users/${getUserId()}/addresses`, address),
+  updateAddress: (id, address) => api.put(`/users/${getUserId()}/addresses/${id}`, address),
+  deleteAddress: (id) => api.delete(`/users/${getUserId()}/addresses/${id}`),
+  setDefaultAddress: (id) => api.put(`/users/${getUserId()}/addresses/${id}/default`),
+};
+
 export default api;
