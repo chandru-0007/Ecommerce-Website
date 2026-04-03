@@ -1,0 +1,6 @@
+{
+  "error": "Bad Request",
+  "message": "User not found: user123",
+  "timestamp": "2026-04-03T18:51:55.577775700",
+  "status": 400
+}
