@@ -36,8 +36,8 @@ public class UserService {
     // ── Login ────────────────────────────────
     public AuthDTOs.AuthResponse login(AuthDTOs.LoginRequest request) {
 
-        User user = userRepository.findByUsername(request.getIdentifier())
-                .or(() -> userRepository.findByEmail(request.getIdentifier()))
+        User user = userRepository.findByUsernameIgnoreCase(request.getIdentifier())
+                .or(() -> userRepository.findByEmailIgnoreCase(request.getIdentifier()))
                 .orElseThrow(() -> new RuntimeException("Invalid credentials"));
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword()))
@@ -62,8 +62,9 @@ public class UserService {
         if (phone != null) user.setPhoneNumber(phone);
 
         user.setUpdatedAt(LocalDateTime.now());
-        user.setPassword(null);
-        return userRepository.save(user);
+        User saved = userRepository.save(user);
+        saved.setPassword(null);
+        return saved;
     }
 
     // ── Change Password ──────────────────────
@@ -92,8 +93,9 @@ public class UserService {
         user.getAddresses().add(address);
         user.setUpdatedAt(LocalDateTime.now());
 
-        user.setPassword(null);
-        return userRepository.save(user);
+        User saved = userRepository.save(user);
+        saved.setPassword(null);
+        return saved;
     }
 
     // ── Update Address ───────────────────────
@@ -114,8 +116,9 @@ public class UserService {
                 user.getAddresses().set(i, updated);
                 user.setUpdatedAt(LocalDateTime.now());
 
-                user.setPassword(null);
-                return userRepository.save(user);
+                User saved = userRepository.save(user);
+                saved.setPassword(null);
+                return saved;
             }
         }
 
@@ -138,8 +141,9 @@ public class UserService {
         }
 
         user.setUpdatedAt(LocalDateTime.now());
-        user.setPassword(null);
-        return userRepository.save(user);
+        User saved = userRepository.save(user);
+        saved.setPassword(null);
+        return saved;
     }
 
     // ── Set Default Address ──────────────────
@@ -162,8 +166,9 @@ public class UserService {
         user.setDefaultAddressId(addressId);
         user.setUpdatedAt(LocalDateTime.now());
 
-        user.setPassword(null);
-        return userRepository.save(user);
+        User saved = userRepository.save(user);
+        saved.setPassword(null);
+        return saved;
     }
 
     // ── Helpers ──────────────────────────────
@@ -174,9 +179,9 @@ public class UserService {
     }
 
     private void validate(AuthDTOs.RegisterRequest r) {
-        if (userRepository.existsByUsername(r.getUsername()))
+        if (userRepository.existsByUsernameIgnoreCase(r.getUsername()))
             throw new RuntimeException("Username taken");
-        if (userRepository.existsByEmail(r.getEmail()))
+        if (userRepository.existsByEmailIgnoreCase(r.getEmail()))
             throw new RuntimeException("Email exists");
     }
 

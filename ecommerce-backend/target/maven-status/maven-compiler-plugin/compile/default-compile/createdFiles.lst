@@ -1,6 +1,7 @@
 com\ecommerce\model\Cart.class
 com\ecommerce\model\Order$OrderStatus.class
 com\ecommerce\model\Order.class
+com\ecommerce\controller\OrderController$OrderRequest.class
 com\ecommerce\service\ProductService.class
 com\ecommerce\controller\CartController.class
 com\ecommerce\repository\ProductRepository.class
