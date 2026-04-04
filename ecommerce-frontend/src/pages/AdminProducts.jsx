@@ -91,8 +91,9 @@ const AdminProducts = () => {
         await adminAPI.deleteProduct(id);
         fetchProducts();
       } catch (err) {
-        console.error(err);
-        alert('Failed to delete product. Only admins can delete.');
+        console.error('Delete error:', err);
+        const errorMessage = err.response?.data?.message || err.response?.data || 'Access Denied: Only admins can delete products.';
+        alert(`Failed to delete product: ${errorMessage}`);
       }
     }
   };

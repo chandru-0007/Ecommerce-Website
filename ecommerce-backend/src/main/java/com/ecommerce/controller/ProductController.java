@@ -37,8 +37,9 @@ public class ProductController {
     // Delete
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteProduct(
-            @RequestHeader("X-User-Id") String adminUserId,
+            @RequestHeader(value = "X-User-Id", required = false) String adminUserId,
             @PathVariable String id) {
+        System.out.println("❌ Admin DELETE Request | AdminID: " + adminUserId + " | ProductID: " + id);
         productService.deleteProduct(adminUserId, id);
         return ResponseEntity.ok("Deleted successfully");
     }

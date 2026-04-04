@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Star, ShoppingCart, Eye, Box } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { formatPrice } from '../utils/format';
 
 const ProductCard = ({ product }) => {
+  if (!product) return null;
+
   const { addToCart } = useCart();
+  const [isFlying, setIsFlying] = useState(false);
   const isLowStock = product.stock > 0 && product.stock < 10;
   const isOutOfStock = product.stock === 0;
+
+  const handleAddToCart = () => {
+    setIsFlying(true);
+    addToCart(product);
+    setTimeout(() => setIsFlying(false), 800);
+  };
 
   return (
     <motion.div 
@@ -58,9 +67,14 @@ const ProductCard = ({ product }) => {
             <Eye size={20} />
           </Link>
           {!isOutOfStock && (
-            <button onClick={() => addToCart(product)} className="btn-primary" style={{ padding: '0.75rem', borderRadius: '50%' }}>
+            <motion.button 
+              whileTap={{ scale: 0.8 }}
+              onClick={handleAddToCart} 
+              className="btn-primary" 
+              style={{ padding: '0.75rem', borderRadius: '50%' }}
+            >
               <ShoppingCart size={20} />
-            </button>
+            </motion.button>
           )}
         </div>
       </div>
@@ -81,11 +95,18 @@ const ProductCard = ({ product }) => {
         </p>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--primary)' }}>{formatPrice(product.price)}</span>
+          <span style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--primary)' }}>
+            {product.price ? formatPrice(product.price) : 'N/A'}
+          </span>
           {!isOutOfStock ? (
-            <button onClick={() => addToCart(product)} className="btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8125rem' }}>
+            <motion.button 
+              whileTap={{ scale: 0.95 }}
+              onClick={handleAddToCart} 
+              className="btn-primary" 
+              style={{ padding: '0.5rem 1rem', fontSize: '0.8125rem' }}
+            >
               Add to Bag
-            </button>
+            </motion.button>
           ) : (
             <button disabled className="btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8125rem', opacity: 0.5, cursor: 'not-allowed' }}>
               Sold Out
@@ -93,6 +114,36 @@ const ProductCard = ({ product }) => {
           )}
         </div>
       </div>
+
+      {/* Fly-to-Cart Animation Instance */}
+      <AnimatePresence>
+        {isFlying && (
+          <motion.div
+            initial={{ scale: 0.5, opacity: 1, x: 0, y: 0 }}
+            animate={{ 
+              scale: 0.2, 
+              opacity: 0, 
+              x: 200, // Approximate direction to cart
+              y: -400 
+            }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              width: '100px',
+              height: '100px',
+              zIndex: 9999,
+              pointerEvents: 'none'
+            }}
+          >
+            <img 
+              src={product.imageUrl} 
+              style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%', border: '4px solid var(--primary)' }} 
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style>{`
         .glass:hover .card-overlay {

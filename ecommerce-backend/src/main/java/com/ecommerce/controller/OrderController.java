@@ -21,6 +21,7 @@ public class OrderController {
     public static class OrderRequest {
         public List<Cart.CartItem> items;
         public double totalPrice;
+        public String addressId;
     }
 
     /**
@@ -30,7 +31,7 @@ public class OrderController {
     public ResponseEntity<Order> placeOrder(
             @PathVariable String userId,
             @RequestBody OrderRequest request) {
-        return ResponseEntity.ok(orderService.placeOrder(userId, request.items, request.totalPrice));
+        return ResponseEntity.ok(orderService.placeOrder(userId, request.items, request.totalPrice, request.addressId));
     }
 
     /**

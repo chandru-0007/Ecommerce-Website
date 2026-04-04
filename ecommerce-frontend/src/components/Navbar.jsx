@@ -1,5 +1,6 @@
-import React from 'react';
-import { ShoppingCart, LogIn, User, LogOut, Package, Search } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ShoppingCart, LogIn, User, LogOut, Package, Search, Sun, Moon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,6 +9,16 @@ const Navbar = () => {
   const { user, logout } = useAuth();
   const { cartCount } = useCart();
   const navigate = useNavigate();
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <nav className="glass" style={{
@@ -39,6 +50,23 @@ const Navbar = () => {
         }} />
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+          <motion.button
+            whileTap={{ scale: 0.8, rotate: 180 }}
+            onClick={toggleTheme}
+            style={{ 
+              background: 'var(--bg-glass)', 
+              border: '1px solid var(--glass-border)', 
+              borderRadius: '50%', 
+              padding: '0.4rem', 
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            {theme === 'dark' ? <Sun size={18} color="#fbbf24" /> : <Moon size={18} color="#6366f1" />}
+          </motion.button>
+
           <Link to="/cart" style={{ position: 'relative', color: 'inherit' }}>
             <ShoppingCart size={22} color="var(--text-main)" />
             {cartCount > 0 && (

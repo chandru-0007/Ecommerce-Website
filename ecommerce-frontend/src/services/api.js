@@ -3,11 +3,7 @@ import axios from 'axios';
 // Switch this back to the Render URL once you deploy the latest backend code:
 const API_BASE_URL = 'https://ecommerce-website-2i22.onrender.com/api';
 //const API_BASE_URL = 'http://localhost:8080/api';
-
-
-
 //comments
-
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
@@ -15,7 +11,7 @@ const api = axios.create({
   },
 });
 
-// Add a request interceptor to include X-User-Id
+// Add a request interceptor to include X-User-Id 
 api.interceptors.request.use(
   (config) => {
     const userString = localStorage.getItem('vibe_user');

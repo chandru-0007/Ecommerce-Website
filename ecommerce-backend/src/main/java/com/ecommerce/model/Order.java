@@ -25,6 +25,9 @@ public class Order {
     private Date placedAt;
     private Date updatedAt;
 
+    private String userName;
+    private String userEmail;
+
     private User.Address deliveryAddress;
     private Date deliveredAt;
 
@@ -59,6 +62,12 @@ public class Order {
 
     public Date getDeliveredAt() { return deliveredAt; }
     public void setDeliveredAt(Date deliveredAt) { this.deliveredAt = deliveredAt; }
+
+    public String getUserName() { return userName; }
+    public void setUserName(String userName) { this.userName = userName; }
+
+    public String getUserEmail() { return userEmail; }
+    public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
 
     // ENUM
     public enum OrderStatus {

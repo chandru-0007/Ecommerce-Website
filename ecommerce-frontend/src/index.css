@@ -30,6 +30,10 @@
   --radius-md: 12px;
   --radius-sm: 8px;
   --container-max: 1280px;
+
+  /* Innovative Accents */
+  --primary-soft: rgba(99, 102, 241, 0.15);
+  --accent-glow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
 
 * {
@@ -45,6 +49,19 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   line-height: 1.5;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme Overrides */
+[data-theme='light'] {
+  --bg-dark: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --bg-glass: rgba(15, 23, 42, 0.05);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --glass-border: rgba(15, 23, 42, 0.1);
+  --shadow-premium: 0 10px 40px -10px rgba(15, 23, 42, 0.1);
+  --primary-soft: rgba(99, 102, 241, 0.1);
 }
 
 /* Glassmorphism Utility */
@@ -175,4 +192,142 @@ input:focus, textarea:focus, select:focus {
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
+}
+/* Premium Order Cards */
+.order-card-premium {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 1px solid var(--glass-border);
+}
+
+.order-card-premium:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 15px var(--primary-soft);
+}
+
+.order-card-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.order-card-premium:hover::before {
+  opacity: 1;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.25rem;
+  color: var(--primary);
+  letter-spacing: 1px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Event-based Animations */
+.animate-success-pop {
+  animation: successPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes successPop {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-error-shake {
+  animation: errorShake 0.4s ease-in-out;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+.loading-zone {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-zone::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  to { transform: translateX(100%); }
+}
+
+/* Skeleton Shimmer */
+.skeleton {
+  background: var(--bg-glass);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  animation: skeleton-load 1.5s infinite;
+}
+
+[data-theme='light'] .skeleton::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(15, 23, 42, 0.05),
+    transparent
+  );
+}
+
+@keyframes skeleton-load {
+  to { left: 100%; }
+}
+
+.skeleton-text {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-title {
+  height: 1.5rem;
+  margin-bottom: 1rem;
+  width: 70%;
+}
+
+.skeleton-image {
+  aspect-ratio: 1/1;
+  width: 100%;
 }

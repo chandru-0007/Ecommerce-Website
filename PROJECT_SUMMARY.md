@@ -13,6 +13,13 @@ This document summarizes the state of the **Vibe Store** project, the enhancemen
     - **Order Processing**: Fully integrated backend for standardizing order placement and status updates.
 - **Currency System**:
     - **Indian Rupees (₹)**: Shifted all pricing from USD to INR, following Indian numbering standards (e.g., ₹1,29,999.00).
+- **Advanced Order Management**:
+    - **Single-Column Focus**: The admin order view now uses a high-end single-column layout for better consignment tracking.
+    - **Dynamic Customer Identity**: Orders now display the customer's full name, email, and the specific delivery address chosen during checkout.
+    - **Restructured Consignment Details**: Detailed item views with product thumbnails and precise quantity/price breakdowns.
+- **Secure Ordering Flow**:
+    - **Address Selection**: Users are now required to select a specific destination from their saved addresses before placing an order.
+    - **Admin Guard**: Implemented mandatory role-based restrictions that prevent administrative accounts from placing orders.
 
 ### 2. Premium "Novelties"
 - **High-End Design System**:
@@ -25,6 +32,12 @@ This document summarizes the state of the **Vibe Store** project, the enhancemen
     - **Newsletter Footer**: A sophisticated "Join the Vibe" section with social integration and service links.
 - **Role-Based Navigation**:
     - The navbar and profile page intelligently adapt to show only relevant links to the current user (e.g., "Add Products" visible only to Admins).
+- **Innovative UI Animations**:
+    - **Cascading Entrances**: Order cards enter the admin panel with a staggered, cascading motion for a premium feel.
+    - **Event-Driven Feedback**: 
+        - **Placed Pulse**: New orders feature a subtle pulse animation on their status badge.
+        - **Return Shake**: Orders requiring returns trigger a "wiggle" animation to signal urgency.
+    - **Shimmer Transitions**: Global shimmer loading effects (`loading-zone`) provide smooth visual continuity during data fetching.
 
 ### 3. Technical Stack
 - **Frontend**: React (Vite), Framer Motion, Lucide Icons, Axios.

@@ -24,7 +24,7 @@ public class OrderService {
     private UserRepository userRepository;
 
     // ── Place Order ─────────────────────────────
-    public Order placeOrder(String userId, List<Cart.CartItem> items, double clientTotalPrice) {
+    public Order placeOrder(String userId, List<Cart.CartItem> items, double clientTotalPrice, String addressId) {
 
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found: " + userId));
@@ -32,18 +32,30 @@ public class OrderService {
         if (items == null || items.isEmpty())
             throw new RuntimeException("Your cart is empty. Please add items to order.");
 
-        // Address Validation
-        User.Address defaultAddress = user.getAddresses().stream()
-                .filter(a -> a.getAddressId().equals(user.getDefaultAddressId()))
-                .findFirst()
-                .orElse(null);
-
-        if (defaultAddress == null && !user.getAddresses().isEmpty()) {
-            defaultAddress = user.getAddresses().get(0); // Fallback to first address
+        // Address Validation - Find the specific address selected by the user
+        User.Address selectedAddress = null;
+        if (addressId != null) {
+            selectedAddress = user.getAddresses().stream()
+                    .filter(a -> a.getAddressId().equals(addressId))
+                    .findFirst()
+                    .orElse(null);
         }
 
-        if (defaultAddress == null) {
-            throw new RuntimeException("No delivery address found. Please add a default address in your profile settings.");
+        // Fallback or validation
+        if (selectedAddress == null) {
+            if (user.getDefaultAddressId() != null) {
+                selectedAddress = user.getAddresses().stream()
+                        .filter(a -> a.getAddressId().equals(user.getDefaultAddressId()))
+                        .findFirst()
+                        .orElse(null);
+            }
+            if (selectedAddress == null && !user.getAddresses().isEmpty()) {
+                selectedAddress = user.getAddresses().get(0);
+            }
+        }
+
+        if (selectedAddress == null) {
+            throw new RuntimeException("No delivery address selected or found. Please provide a valid address.");
         }
 
         double totalAmount = 0;
@@ -75,10 +87,12 @@ public class OrderService {
         // Create order
         Order order = new Order();
         order.setUserId(userId);
+        order.setUserName(selectedAddress.getFullName()); // ✅ Set Real Name
+        order.setUserEmail(user.getEmail());           // ✅ Set Real Email
         order.setItems(items);
         order.setTotalAmount(totalAmount);
         order.setStatus(Order.OrderStatus.PLACED);
-        order.setDeliveryAddress(defaultAddress); // ✅ SET ADDRESS
+        order.setDeliveryAddress(selectedAddress); // ✅ SET SPECIFIC ADDRESS
 
         // ✅ FIXED
         order.setPaymentMethod("COD");
@@ -86,7 +100,7 @@ public class OrderService {
         order.setPlacedAt(new Date());
         order.setUpdatedAt(new Date());
 
-        System.out.println("Order successfully placed for user: " + userId + " | Total: " + totalAmount);
+        System.out.println("Order successfully placed for user: " + selectedAddress.getFullName() + " | Total: " + totalAmount);
         return orderRepository.save(order);
     }
 

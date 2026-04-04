@@ -75,8 +75,19 @@ const Shop = () => {
       </div>
 
       {loading ? (
-        <div style={{ textAlign: 'center', padding: '4rem' }}>
-          <div className="loader">Browsing our collection...</div>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', 
+          gap: '2rem' 
+        }}>
+          {[1, 2, 3, 4, 5, 6, 7, 8].map(n => (
+            <div key={n} className="glass" style={{ padding: '1.5rem', height: '400px' }}>
+              <div className="skeleton skeleton-image" style={{ marginBottom: '1.5rem' }} />
+              <div className="skeleton skeleton-title" />
+              <div className="skeleton skeleton-text" />
+              <div className="skeleton skeleton-text" style={{ width: '40%' }} />
+            </div>
+          ))}
         </div>
       ) : (
         <motion.div 

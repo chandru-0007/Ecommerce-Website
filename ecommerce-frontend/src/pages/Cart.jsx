@@ -4,15 +4,42 @@ import { useCart } from '../context/CartContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { formatPrice } from '../utils/format';
-import { orderAPI } from '../services/api';
+import { orderAPI, userAPI } from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import { MapPin, CheckCircle2, AlertCircle } from 'lucide-react';
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
-  const { user } = useAuth();
+  const { user, isAdmin } = useAuth();
   const navigate = useNavigate();
   const [orderSuccess, setOrderSuccess] = React.useState(false);
   const [isPlacing, setIsPlacing] = React.useState(false);
+  const [addresses, setAddresses] = React.useState([]);
+  const [selectedAddressId, setSelectedAddressId] = React.useState(null);
+  const [loadingAddresses, setLoadingAddresses] = React.useState(false);
+
+  React.useEffect(() => {
+    if (user && !isAdmin) {
+      fetchAddresses();
+    }
+  }, [user, isAdmin]);
+
+  const fetchAddresses = async () => {
+    setLoadingAddresses(true);
+    try {
+      const res = await userAPI.getProfile();
+      setAddresses(res.data.addresses || []);
+      if (res.data.defaultAddressId) {
+        setSelectedAddressId(res.data.defaultAddressId);
+      } else if (res.data.addresses?.length > 0) {
+        setSelectedAddressId(res.data.addresses[0].addressId);
+      }
+    } catch (err) {
+      console.error('Failed to fetch addresses:', err);
+    } finally {
+      setLoadingAddresses(false);
+    }
+  };
 
   const handlePlaceOrder = async () => {
     if (!user) {
@@ -22,11 +49,17 @@ const Cart = () => {
 
     if (cartItems.length === 0) return;
 
+    if (!selectedAddressId) {
+      alert('Please select a delivery address to proceed.');
+      return;
+    }
+
     setIsPlacing(true);
     try {
       await orderAPI.place({ 
         items: cartItems.map(item => ({ productId: item.id, quantity: item.quantity })),
-        totalPrice: cartTotal
+        totalPrice: cartTotal,
+        addressId: selectedAddressId
       });
       setOrderSuccess(true);
       clearCart();
@@ -120,9 +153,87 @@ const Cart = () => {
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '5rem', alignItems: 'start' }}>
-        <div className="cart-items">
-          <AnimatePresence mode="popLayout">
-            {cartItems.map(item => (
+        <div className="cart-left">
+          {/* Address Selection Section */}
+          {!isAdmin && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="glass" 
+              style={{ padding: '2.5rem', marginBottom: '2.5rem', border: '1px solid var(--primary-soft)' }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <div style={{ background: 'var(--bg-glass)', padding: '0.75rem', borderRadius: '12px' }}>
+                    <MapPin size={24} color="var(--primary)" />
+                  </div>
+                  <div>
+                    <h2 style={{ fontSize: '1.5rem', fontWeight: '700' }}>Delivery Destination</h2>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Select where your vibes should land</p>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => navigate('/settings')} 
+                  className="btn-outline btn-sm"
+                  style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }}
+                >
+                  Manage Addresses
+                </button>
+              </div>
+
+              {loadingAddresses ? (
+                <div style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>Locating your saved zones...</div>
+              ) : addresses.length === 0 ? (
+                <div style={{ padding: '2rem', textAlign: 'center', background: 'var(--bg-glass)', borderRadius: '16px' }}>
+                  <AlertCircle size={32} color="var(--warning)" style={{ marginBottom: '1rem' }} />
+                  <p style={{ marginBottom: '1.5rem' }}>No delivery addresses found in your profile.</p>
+                  <button onClick={() => navigate('/settings')} className="btn btn-primary">Add Your First Address</button>
+                </div>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {addresses.map(addr => (
+                    <div 
+                      key={addr.addressId} 
+                      onClick={() => setSelectedAddressId(addr.addressId)}
+                      className={`glass address-option ${selectedAddressId === addr.addressId ? 'selected' : ''}`}
+                      style={{ 
+                        padding: '1.5rem', 
+                        cursor: 'pointer', 
+                        display: 'flex', 
+                        justifyContent: 'space-between', 
+                        alignItems: 'center',
+                        transition: 'all 0.3s ease',
+                        background: selectedAddressId === addr.addressId ? 'rgba(99, 102, 241, 0.1)' : 'var(--bg-glass)',
+                        borderColor: selectedAddressId === addr.addressId ? 'var(--primary)' : 'var(--glass-border)',
+                        borderWidth: selectedAddressId === addr.addressId ? '2px' : '1px'
+                      }}
+                    >
+                      <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                        <div style={{ 
+                          width: '24px', height: '24px', borderRadius: '50%', border: '2px solid var(--primary)',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          background: selectedAddressId === addr.addressId ? 'var(--primary)' : 'transparent'
+                        }}>
+                          {selectedAddressId === addr.addressId && <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'white' }} />}
+                        </div>
+                        <div>
+                          <div style={{ fontWeight: '700', marginBottom: '0.25rem' }}>{addr.fullName}</div>
+                          <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                            {addr.street}, {addr.city}, {addr.state} - {addr.postalCode}
+                          </div>
+                        </div>
+                      </div>
+                      {selectedAddressId === addr.addressId && <CheckCircle2 size={20} color="var(--primary)" />}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          <div className="cart-items">
+            <AnimatePresence mode="popLayout">
+              {cartItems.map(item => (
               <motion.div 
                 layout
                 initial={{ opacity: 0, y: 20 }}
@@ -176,6 +287,7 @@ const Cart = () => {
               </motion.div>
             ))}
           </AnimatePresence>
+          </div>
         </div>
 
         <motion.div 
@@ -211,14 +323,22 @@ const Cart = () => {
             </div>
           </div>
 
-          <button 
-            className="btn btn-primary" 
-            style={{ width: '100%', padding: '1.5rem', fontSize: '1.25rem', borderRadius: '16px', opacity: isPlacing ? 0.7 : 1 }}
-            disabled={isPlacing}
-            onClick={handlePlaceOrder}
-          >
-            {isPlacing ? 'Processing...' : 'Place Your Order'} <ArrowRight size={22} style={{ marginLeft: '1rem' }} />
-          </button>
+          {isAdmin ? (
+            <div className="glass" style={{ padding: '2rem', textAlign: 'center', border: '1px solid var(--warning)', background: 'rgba(245, 158, 11, 0.05)' }}>
+              <AlertCircle size={32} color="var(--warning)" style={{ marginBottom: '1rem', margin: '0 auto' }} />
+              <h3 style={{ marginBottom: '0.5rem' }}>Admin Access Only</h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Administrative accounts are restricted from placing orders. Please logical into a customer account to purchase gear.</p>
+            </div>
+          ) : (
+            <button 
+              className="btn btn-primary" 
+              style={{ width: '100%', padding: '1.5rem', fontSize: '1.25rem', borderRadius: '16px', opacity: (isPlacing || !selectedAddressId) ? 0.7 : 1 }}
+              disabled={isPlacing || !selectedAddressId}
+              onClick={handlePlaceOrder}
+            >
+              {isPlacing ? 'Processing...' : 'Place Your Order'} <ArrowRight size={22} style={{ marginLeft: '1rem' }} />
+            </button>
+          )}
           
           <div style={{ marginTop: '3rem', borderTop: '1px solid var(--glass-border)', paddingTop: '2rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
@@ -244,6 +364,14 @@ const Cart = () => {
           color: var(--danger) !important;
           transform: scale(1.1);
           transition: all 0.2s ease;
+        }
+        .address-option:hover {
+          transform: translateX(10px);
+          background: rgba(99, 102, 241, 0.05) !important;
+        }
+        .address-option.selected:hover {
+          transform: translateX(10px);
+          background: rgba(99, 102, 241, 0.1) !important;
         }
       `}</style>
     </div>

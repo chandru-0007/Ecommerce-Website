@@ -38,8 +38,16 @@ public class ProductService {
 
     // Delete
     public void deleteProduct(String adminId, String id) {
+        System.out.println("⚠️  Service: Deleting Product: " + id + " | Requested by Admin: " + adminId);
         roleGuard.requireAdmin(adminId);
+        
+        if (!productRepository.existsById(id)) {
+            System.out.println("❌ Error: Product ID " + id + " does not exist in DB");
+            throw new RuntimeException("Product not found or already deleted");
+        }
+        
         productRepository.deleteById(id);
+        System.out.println("✅ Product " + id + " successfully purged from DB");
     }
 
     // Update
