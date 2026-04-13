@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Switch this back to the Render URL once you deploy the latest backend code:
 //const API_BASE_URL = 'https://ecommerce-website-2i22.onrender.com/api';
-const API_BASE_URL ='https://ecommerce-website-2i22.onrender.com';
+const API_BASE_URL = 'https://ecommerce-website-2i22.onrender.com/api';
 //const API_BASE_URL = 'http://localhost:8080/api';
 //comments
 const api = axios.create({
